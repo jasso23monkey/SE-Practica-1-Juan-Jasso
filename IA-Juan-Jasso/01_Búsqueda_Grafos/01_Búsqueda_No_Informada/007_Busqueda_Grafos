@@ -1,0 +1,23 @@
+# Estructura Básica de un Grafo
+
+def definir_grafo_basico():
+    """Define un grafo simple no dirigido (se asume que las conexiones son dobles)."""
+    grafo = {
+        'Aeropuerto': ['Ciudad_A', 'Ciudad_B'],
+        'Ciudad_A': ['Aeropuerto', 'Ciudad_C'],
+        'Ciudad_B': ['Aeropuerto', 'Ciudad_D'],
+        'Ciudad_C': ['Ciudad_A', 'Objetivo'],
+        'Ciudad_D': ['Ciudad_B', 'Ciudad_E'],
+        'Ciudad_E': ['Ciudad_D', 'Objetivo'],
+        'Objetivo': ['Ciudad_C', 'Ciudad_E'] # Nodo Meta
+    }
+    return grafo
+
+# Punto de inicio
+INICIO = 'Aeropuerto'
+OBJETIVO = 'Objetivo'
+
+mapa = definir_grafo_basico()
+print("Grafo (Mapa de Ciudades):")
+print(mapa)
+print(f"Tarea: Encontrar una ruta de {INICIO} a {OBJETIVO}")
